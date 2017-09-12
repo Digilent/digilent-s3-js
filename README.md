@@ -1,2 +1,2 @@
-# digilent-s3-js
-Digilent S3 wrapper module
+# Digilent S3 JS
+Digilent wrapper module for AWS S3

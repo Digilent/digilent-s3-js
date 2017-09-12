@@ -1,0 +1,24 @@
+{
+  "name": "@digilent/digilent-s3-js",
+  "version": "0.0.0",
+  "description": "Digilent wrapper module for AWS S3",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine spec/core.js",
+    "prepublish": "npm run build",
+    "clean": "rm -rf dist && rm -rf bundle",
+    "copyCss": "cp -f src/*.css ./bundle && cp -f src/*.css ./dist",
+    "ls": "ls -al ./src",
+    "build": "npm run clean && tsc && webpack bundleHelper.js ./bundle/digilent-s3-js.js && npm run copyCss"
+  },
+  "author": "Digilent",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^7.0.12",
+    "typescript": "2.0.10",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.104.0"
+  }
+}
