@@ -1,21 +1,17 @@
-import {DigilentAuthJs} from '@digilent/digilent-auth-js';
-import {S3} from 'aws-sdk';
+//import { S3 } from 'aws-sdk';
+declare var AWS: any;
 
 export class DigilentS3Js {
 
     public s3: any;
-    public bucketName: string = '';
+    public bucketName: string = 'digilent-test';
     public awsRootUrl: string = 'https://s3-us-west-2.amazonaws.com/';
 
     constructor(
-        
     ) {
-        let auth = new DigilentAuthJs();
-        console.log(auth);
-
-        this.s3 = new S3({
+        this.s3 = new AWS.S3({
             apiVersion: '2006-03-01',
-            params: { Bucket: 'digilent-s3-js-test-bucket' }
+            params: { Bucket: this.bucketName }
         });
         console.log('DigilentS3Js Constructor Complete');
     }
